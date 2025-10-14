@@ -1,0 +1,17 @@
+name: federated-medical-radiology
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy>=1.24.0
+  - pytorch>=2.0.0
+  - torchvision>=0.15.0  # For Approach 4 pre-trained models
+  - matplotlib>=3.7.0
+  - scipy>=1.10.0
+  - pandas>=2.0.0  # Optional for data handling
+  - datasets>=2.14.0  # For HuggingFace NIH loading
+  - pip
+  - pip:
+      - torchcam  # Optional: For Grad-CAM explainability
