@@ -354,7 +354,8 @@ def main():
     accuracy = server.evaluate_global_model(test_loader)
     print(f"  Test Accuracy: {accuracy:.4f}")
     print(f"  Total Privacy Budget Used: ε={server.privacy_budget_history[-1]:.4f}")
-    
+    from fl_model_saving import save_dpfl_model
+    save_dpfl_model(server)
     # Visualization
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     
