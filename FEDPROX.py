@@ -307,7 +307,7 @@ def main():
     print(f"  Test Accuracy: {accuracy:.4f}")
     
     from fl_model_saving import save_fedprox_model
-    save_fedavg_model(server)
+    save_fedprox_model(server)
     
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     
