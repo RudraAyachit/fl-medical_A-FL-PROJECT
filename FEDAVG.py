@@ -277,6 +277,8 @@ def main():
     plt.savefig('fedavg_training_loss.png', dpi=150)
     print("\n[OUTPUT] Training loss plot saved as 'fedavg_training_loss.png'")
     
+    from fl_model_saving import save_fedavg_model
+    save_fedavg_model(server)
     # ============ SUMMARY ============
     print("\n" + "="*50)
     print("APPROACH 1: FEDAVG - SUMMARY")
@@ -285,15 +287,9 @@ def main():
     print(f"Total Hospitals: {NUM_CLIENTS}")
     print(f"Final Test Accuracy: {accuracy:.4f}")
     print(f"Final Training Loss: {server.loss_history[-1]:.4f}")
-    print("\nStrengths:")
-    print("  ✓ Simple implementation")
-    print("  ✓ Low communication overhead")
-    print("  ✓ Baseline for federated learning")
-    print("\nLimitations:")
-    print("  ✗ Struggles with non-IID data")
-    print("  ✗ No uncertainty quantification")
-    print("  ✗ Synchronous communication bottleneck")
+
 
 
 if __name__ == "__main__":
     main()
+    
