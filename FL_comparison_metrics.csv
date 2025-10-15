@@ -1,0 +1,6 @@
+Variant,Accuracy,Privacy,Scalability,Interpretability,Complexity
+Cross-Silo,0.9763695984463726,0.5,0.6,0.5,0.3
+Personalized,1.0,0.5,0.4,0.5,0.7
+Privacy-Preserving,0.9098597805315315,0.95,0.55,0.5,0.85
+Hierarchical,0.9816520813311697,0.6,0.95,0.45,0.6
+Explainable,0.9944670783029994,0.6,0.6,0.9,0.7
