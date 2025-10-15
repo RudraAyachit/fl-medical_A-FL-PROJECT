@@ -212,6 +212,9 @@ def main():
     test_loader = DataLoader(TensorDataset(torch.FloatTensor(X_test), torch.LongTensor(y_test)), batch_size=BATCH_SIZE)
     acc = server.evaluate_global_model(test_loader)
     print(f"Test Accuracy: {acc:.4f}")
+
+    from fl_model_saving import save_verticalfl_model
+    save_verticalfl_model(server)
     
     plt.plot(server.loss_history)
     plt.title('Vertical FL Loss')
