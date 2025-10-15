@@ -213,6 +213,9 @@ def main():
     acc, unc = server.evaluate_with_uncertainty(test_loader)
     print(f"Test Accuracy: {acc:.4f}, Avg Uncertainty: {unc:.4f}")
     
+    from fl_model_saving import save_fedavg_model
+    save_fedhierarchialfl_model(server)
+    
     plt.plot(server.loss_history)
     plt.title('Hierarchical FL Loss')
     plt.show()
