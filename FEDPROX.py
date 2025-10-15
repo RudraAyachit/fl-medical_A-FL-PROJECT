@@ -306,6 +306,9 @@ def main():
     accuracy = server.evaluate_global_model(test_loader)
     print(f"  Test Accuracy: {accuracy:.4f}")
     
+    from fl_model_saving import save_fedprox_model
+    save_fedavg_model(server)
+    
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     
     axes[0].plot(server.convergence_metrics['avg_client_loss'], marker='o', linewidth=2)
@@ -320,7 +323,6 @@ def main():
     axes[1].set_ylabel('Weight Divergence (Heterogeneity)')
     axes[1].set_title('FedProx: Data Heterogeneity Measure')
     axes[1].grid(True)
-    
     plt.tight_layout()
     plt.savefig('fedprox_analysis.png', dpi=150)
     print("  Plot saved as 'fedprox_analysis.png'")
@@ -332,15 +334,7 @@ def main():
     print(f"Total Hospitals: {NUM_CLIENTS}")
     print(f"Final Test Accuracy: {accuracy:.4f}")
     print(f"FedProx μ (proximity term weight): {MU}")
-    print("\nKey Features:")
-    print("  ✓ Handles non-IID data via proximity term")
-    print("  ✓ Faster convergence than FedAvg with heterogeneous data")
-    print("  ✓ Weighted aggregation by sample count")
-    print("  ✓ Heterogeneity measurement included")
-    print("\nWhen to use FedProx over FedAvg:")
-    print("  • Hospitals have different data distributions (disease prevalence)")
-    print("  • Need better convergence with non-IID data")
-    print("  • Some hospitals have significantly more data than others")
+
 
 
 if __name__ == "__main__":
